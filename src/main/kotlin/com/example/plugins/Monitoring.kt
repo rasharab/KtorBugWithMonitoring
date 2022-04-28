@@ -12,7 +12,7 @@ fun Application.configureMonitoring() {
         disableDefaultColors()
         filter { call -> call.request.path().startsWith("/") }
 
-        // BUG: Calling principal some
+        // BUG: Calling principal somehow causes application call path parameters to be reset during authentication
         mdc("identityId") {
             it.principal<JWTPrincipal>()?.subject ?: "No subject"
         }
