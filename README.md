@@ -3,7 +3,7 @@
 This repo illustrates a regression we noticed as of Ktors 2.0.0.
 This was working with Ktors 2.0.0-beta1.
 
-The gist of the bug is that we add an MDC context for the JWTPrincipal and that somehow causes the application call parameters to be reset during Authentication.
+The gist of the bug is that if we add an MDC context for the application JWTPrincipal, that somehow causes the application call parameters to be reset during Authentication.
 
 In `Monitoring.kt` we have:
 ```kotlin
