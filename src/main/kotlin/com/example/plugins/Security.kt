@@ -21,7 +21,6 @@ fun Application.configureSecurity() {
                     .build()
             )
             validate { credential ->
-                this.principal<JWTPrincipal>()
                 val teamId = this.parameters["teamId"]
                 if (teamId == null) {
                     println("TeamID is unexpectedly null!")

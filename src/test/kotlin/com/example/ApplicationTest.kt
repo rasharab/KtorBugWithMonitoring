@@ -42,7 +42,7 @@ class ApplicationTest {
     }
 
     @Test
-    fun `Without monitoring authentication works`() = testApplication {
+    fun `Without monitoring authentication works as expected`() = testApplication {
         application {
             configureSecurity()
             configureRouting()
@@ -56,7 +56,7 @@ class ApplicationTest {
     }
 
     @Test
-    fun `With monitoring authentication fails`() = testApplication {
+    fun `With monitoring authentication fails when it should not fail`() = testApplication {
         application {
             configureSecurity()
             configureRouting()

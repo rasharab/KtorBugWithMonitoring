@@ -12,6 +12,7 @@ fun Application.configureMonitoring() {
         disableDefaultColors()
         filter { call -> call.request.path().startsWith("/") }
 
+        // BUG: Calling principal some
         mdc("identityId") {
             it.principal<JWTPrincipal>()?.subject ?: "No subject"
         }
